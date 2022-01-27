@@ -1,0 +1,13 @@
+echo ""
+echo "This script copies a udev rule to /etc/udev/rules.d/ to facilitate"
+echo "bringing up the SparkFun Razor IMU M0 usb connection as /dev/imuN."
+echo ""
+
+sudo cp ../config/razor_imu_m0_driver.rules /etc/udev/rules.d/60-razor_imu_m0_driver.rules
+
+
+echo ""
+echo "Restarting udev"
+echo ""
+sudo service udev reload
+sudo service udev restart
